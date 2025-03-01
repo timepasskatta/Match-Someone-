@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Compatibility Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .instructions {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Friend Compatibility Test</h1>
+        <p>Fill out the quiz and see how much you and your friend think alike!</p>
+        
+        <!-- Yahan aap apne Google Form ka embed link replace karein -->
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_LINK/viewform?embedded=true"></iframe>
+        
+        <div class="instructions">
+            <h2>How to Check Score:</h2>
+            <ol>
+                <li>First, fill out the form yourself.</li>
+                <li>Then, share the form link with your friend.</li>
+                <li>Download responses from Google Forms into Google Sheets.</li>
+                <li>Use a formula to check matching answers:  
+                    <br><code>=COUNTIF(A2:A101, B2:B101)/100*100</code></li>
+                <li>The result is your match percentage!</li>
+            </ol>
+        </div>
+
+        <p class="footer">Created by You</p>
+    </div>
+</body>
+</html>
