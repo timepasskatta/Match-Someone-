@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friend Compatibility Test</title>
+    <title>Match Love - Compatibility Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            color: #333;
         }
         .container {
             max-width: 800px;
@@ -21,45 +22,113 @@
             border-radius: 8px;
         }
         h1 {
-            color: #333;
+            color: #e63946;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
         }
         iframe {
             width: 100%;
             height: 600px;
             border: none;
-        }
-        .instructions {
-            text-align: left;
             margin-top: 20px;
+        }
+        .copy-btn, .whatsapp-btn {
+            display: block;
+            width: 90%;
+            max-width: 300px;
+            padding: 12px;
+            margin: 15px auto;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .copy-btn {
+            background: #007bff;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+        .whatsapp-btn {
+            background: #25d366;
+        }
+        .whatsapp-btn:hover {
+            background: #1da851;
         }
         .footer {
             margin-top: 20px;
             font-size: 14px;
             color: gray;
         }
+        .instructions {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .payment-info {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            background: #ffeb3b;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Friend Compatibility Test</h1>
-        <p>Fill out the quiz and see how much you and your friend think alike!</p>
-        
-        <!-- Yahan aap apne Google Form ka embed link replace karein -->
-        <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_LINK/viewform?embedded=true"></iframe>
-        
+        <h1>Match Love</h1>
+        <p>💖 तुमचे विचार किती जुळतात? 100 प्रश्नांच्या टेस्टने शोधा! 💖</p>
+
         <div class="instructions">
-            <h2>How to Check Score:</h2>
-            <ol>
-                <li>First, fill out the form yourself.</li>
-                <li>Then, share the form link with your friend.</li>
-                <li>Download responses from Google Forms into Google Sheets.</li>
-                <li>Use a formula to check matching answers:  
-                    <br><code>=COUNTIF(A2:A101, B2:B101)/100*100</code></li>
-                <li>The result is your match percentage!</li>
-            </ol>
+            <p>• **खाली दिलेला फॉर्म पूर्ण भरा.**</p>
+            <p>• **भरतांना unique code तुम्ही जो टाकाल, तोच तुमच्या पार्टनर लां टाकायला सांगा.**</p>
+            <p>• **भरून झाल्यानंतर तुम्हाला आमच्याकडून 18-24 तासांत WhatsApp वर मेसेज येईल.**</p>
+            <p>• **तुम्हाला तुमचे व समोरच्या व्यक्तीचे किती विचार जुळतात याचे सर्व statistics पाठवले जाईल.**</p>
         </div>
 
-        <p class="footer">Created by You</p>
+        <!-- Google Form Embed (Replace the Link Below) -->
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_LINK/viewform?embedded=true"></iframe>
+
+        <!-- Copy Link Button -->
+        <button class="copy-btn" onclick="copyLink()">📋 फॉर्मचा लिंक कॉपी करा</button>
+        
+        <p>🔗 **सेम फॉर्म पार्टनर ला पाठवा आणि unique code सेम वापरायला सांगा.**</p>
+
+        <!-- Payment Instructions -->
+        <div class="payment-info">
+            <p>💰 **फक्त ₹19 मध्ये Compatibility Score मिळवा!**</p>
+            <p>📤 **पेमेंट करण्यासाठी:** <a href="https://drive.google.com/file/d/1FiZt0UZOQ5pWDXar74FfGtIbN5Ar3gvl/view?usp=drivesdk" target="_blank">**येथे क्लिक करा**</a></p>
+            <p>🖼️ **पेमेंट स्क्रीनशॉट आणि Unique Code खालील WhatsApp नंबर वर पाठवा.**</p>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <button class="whatsapp-btn" onclick="sendWhatsApp()">📩 WhatsApp वर पाठवा</button>
+
+        <p class="footer">📞 **Contact on WhatsApp: 8208141447**</p>
     </div>
+
+    <script>
+        function copyLink() {
+            const formLink = "https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_LINK/viewform"; // Replace with actual form link
+            navigator.clipboard.writeText(formLink).then(() => {
+                alert("📋 फॉर्म लिंक कॉपी झाला, आता तुमच्या पार्टनर ला पाठवा!");
+            });
+        }
+
+        function sendWhatsApp() {
+            const phoneNumber = "8208141447";
+            const message = encodeURIComponent("मी पेमेंट केले आहे व फॉर्म पण आम्ही दोघांनी भरले आहेत, कृपया रिझल्ट पाठवा.");
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+
 </body>
-</html>
+        </html>
